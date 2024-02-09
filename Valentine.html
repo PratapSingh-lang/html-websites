@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blinking Message</title>
+<style>
+    .blink {
+        animation: blink-animation 1s steps(5, start) infinite;
+        -webkit-animation: blink-animation 1s steps(5, start) infinite;
+    }
+    @keyframes blink-animation {
+        to {
+            visibility: hidden;
+        }
+    }
+    @-webkit-keyframes blink-animation {
+        to {
+            visibility: hidden;
+        }
+    }
+</style>
+</head>
+<body>
+<div id="message"></div>
+<button onclick="showThankYou()">Show Thank You</button>
+
+<script>
+    function blinkMessage() {
+        var messageDiv = document.getElementById("message");
+        var messages = ["Everyday I cannot belive how lucky I am"
+        , "amongst trillions and trillions of star, over billions of years"
+        , "to be alive, and to get to spend this life with you"
+        , "is so incredibly, unfathomably unlikely"
+        , "and yet here I am to get the impossible chance to get to know you"
+        , "I love you so much, more than all the tile and space in the universe can contain"
+        , "and I can't wait to spend all the time in the world to share that love with you!"
+        ,"will you be Mine? "
+        ]; // Add your messages here
+        var currentIndex = 0;
+
+        setInterval(function() {
+            messageDiv.innerHTML = messages[currentIndex];
+            currentIndex = (currentIndex + 1) % messages.length;
+            messageDiv.classList.toggle("blink");
+        }, 2000);
+    }
+
+    function showThankYou() {
+        alert("Thank you!");
+    }
+
+    blinkMessage();
+</script>
+</body>
+</html>
