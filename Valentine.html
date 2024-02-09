@@ -3,11 +3,128 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Blinking Message</title>
+<title>Love</title>
 <style>
+
+/*
+    .button {
+        display: inline-block;
+        background-color: #4CAF50; 
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 10px;
+        transition-duration: 0.4s;
+    }
+
+    .button:hover {
+        background-color: #45a049; 
+    }
+*/
+
+    .button {
+        display: inline-block;
+        padding: 15px 32px;
+        font-size: 16px;
+        text-align: center;
+        cursor: pointer;
+        outline: none;
+        color: #fff;
+        background: linear-gradient(to right, #ff105f, #ffad06);
+        border: none;
+        border-radius: 50px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease 0s;
+
+        
+    }
+
+    /* Position the button below the text */
+    #thankYouBtn {
+        position: absolute;
+        top: calc(50% + 50px); 
+        left: 50%;
+        transform: translateX(-50%);
+        display: none; 
+    }
+    .button:hover {
+        background: linear-gradient(to left, #ff105f, #ffad06);
+        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        transform: translateY(-2px);
+    }
+
+    /* Optional: Add a bit of margin for better spacing */
+    .button-container {
+        margin: 20px;
+    }
+
+
+        body {
+            height: 100%;
+            margin: 100;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column; 
+            /* background: linear-gradient(180deg, #001a33, #0f264b, #1f335e, #253773, #272c7e, #2b3289, #2f3893, #333e9e, #2d2b8c, #27227c, #22196c, #1e105d);
+            animation: twinkling 10s infinite; */
+            /* background: url(' https://png.pngtree.com/background/20230323/original/pngtree-starry-sky-stars-twinkling-background-picture-image_2164549.jpg') repeat; */
+            /* animation: twinkling 10s infinite; */
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        #message
+        /* , #minMessage */
+        {
+            /* margin: 100;
+            text-align: center;
+            color: white;
+            font-size: 24px; */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 24px;
+            text-align: center;
+        }
+
+        
+        /* #minMessage{
+            text-align: center;
+            color: red;
+            font-size: 24px;
+        } */
+
+        .valentine-message {
+
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 24px;
+            text-align: center;
+            
+        }
+
+        /* .button{
+            color: white;
+            background-color: salmon;
+        } */
+
+
     .blink {
-        animation: blink-animation 2s steps(5, start) infinite;
-        -webkit-animation: blink-animation 2s steps(5, start) infinite;
+        animation: blink-animation 5s steps(5, start) infinite;
+        -webkit-animation: blink-animation 5s steps(5, start) infinite;
     }
     @keyframes blink-animation {
         to {
@@ -23,7 +140,78 @@
 </head>
 <body>
 <div id="message"></div>
-<button id="thankYouBtn" style="display: none;" onclick="showThankYou()">If yes click me!</button>
+<div id="mineMessage" style="display: none;" class="valentine-message">
+    <p>Will you be my valentine?</p>
+</div>
+<br/>
+<br/>
+<button id="thankYouBtn" class="button" style="display: none;" onclick="showThankYou()">If yes click me!</button>
+
+
+
+<!-- 
+  <audio controls autoplay loop>
+    <source src="https://ringtonesnew.com/lakho-mile-koi-bhi-na-tum-sa-mila-arijit-singh-hindi-song-ringtone/" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio> -->
+<!-- 
+  <audio id="myAudio" autoplay loop>
+    <source src="https://ringtonesnew.com/lakho-mile-koi-bhi-na-tum-sa-mila-arijit-singh-hindi-song-ringtone/" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  
+  <script>
+  // Autoplay the audio as soon as the page loads
+  window.onload = function() {
+    var audio = document.getElementById("myAudio");
+    audio.play();
+  };
+  </script> -->
+
+<!-- 
+  <audio id="myAudio" loop>
+    <source src="https://ringtonesnew.com/lakho-mile-koi-bhi-na-tum-sa-mila-arijit-singh-hindi-song-ringtone/" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  <button onclick="playAudio()">Play Audio</button>
+  
+  <script>
+  function playAudio() {
+    var audio = document.getElementById("myAudio");
+    audio.play()
+      .then(() => {
+        console.log('Audio started playing successfully.');
+      })
+      .catch(error => {
+        console.error('Failed to play audio:', error.message);
+      });
+  }
+  </script> -->
+
+
+<script>
+    var backgroundImageURL = 
+        // 'https://img.freepik.com/premium-photo/starry-night-sky-background-with-twinkling-stars_1008702-842.jpg?w=996 '
+            // ' https://img.pikbest.com/best/video_preview_img/2307/9113453.jpg!w700wp ' 
+    // 'https://png.pngtree.com/background/20230323/original/pngtree-starry-sky-stars-twinkling-background-pictue-image_2164549.jpg'
+    // 'https://i.pinimg.com/originals/01/6e/fe/016efed4f256a8e0f3b747556a8abf96.jpg'
+    // 'https://images.pexels.com/photos/433155/pexels-photo-433155.jpeg?cs=srgb&dl=pexels-pixabay-433155.jpg&fm=jpg'
+    // 'https://images.pexels.com/photos/2379653/pexels-photo-2379653.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
+    // 'https://images.pexels.com/photos/1324803/pexels-photo-1324803.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
+    // 'https://images.pexels.com/photos/1146708/pexels-photo-1146708.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
+    // 'https://images.pexels.com/photos/1128797/pexels-photo-1128797.jpeg?auto=compress&cs=tinysrgb&w=600'
+    // 'https://images.pexels.com/photos/35857/amazing-beautiful-breathtaking-clouds.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
+    // 'https://images.pexels.com/photos/1166209/pexels-photo-1166209.jpeg?auto=compress&cs=tinysrgb&w=600'
+    // 'https://images.pexels.com/photos/531879/pexels-photo-531879.jpeg?auto=compress&cs=tinysrgb&w=600'
+    // 'https://images.pexels.com/photos/531910/pexels-photo-531910.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
+    // 'https://images.pexels.com/photos/1834403/pexels-photo-1834403.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
+    // 'https://images.pexels.com/photos/576739/pexels-photo-576739.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
+    'https://images.pexels.com/photos/2098428/pexels-photo-2098428.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2' // star
+    // 'https://images.pexels.com/photos/2531237/pexels-photo-2531237.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
+    // 'https://images.pexels.com/photos/1903702/pexels-photo-1903702.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
+    ;    
+    document.body.style.backgroundImage = 'url("' + backgroundImageURL + '")';
+</script>
 
 <script>
     function blinkMessage() {
@@ -35,26 +223,35 @@
         , "and yet here I am to get the impossible chance to get to know you"
         , "I love you so much, more than all the tile and space in the universe can contain"
         , "and I can't wait to spend all the time in the world to share that love with you!"
-        ,"will you be Mine? "
+        // ,"will you be Mine? "
         ];
         var currentIndex = 0;
 
-        var intervalId = setInterval(function() {
-            messageDiv.innerHTML = messages[currentIndex];
-            currentIndex++;
+        function displayMessage(message) {
+            messageDiv.innerHTML = message;
+            var displayDuration = message.length * 100; // Adjust this multiplier as needed
+            setTimeout(function() {
+                messageDiv.innerHTML = "";
+                currentIndex++;
+                if (currentIndex < messages.length) {
+                    displayMessage(messages[currentIndex]);
+                } else {
+                    // displayMessage(messages[currentIndex]);
+                    document.getElementById("mineMessage").style.display = "block";
+                    document.getElementById("thankYouBtn").style.display = "block";
+                }
+            }, displayDuration);
+        }
 
-            if (currentIndex >= messages.length) {
-                clearInterval(intervalId);
-                document.getElementById("thankYouBtn").style.display = "block";
-            }
-        }, 2000);
+        displayMessage(messages[currentIndex]);
     }
 
     function showThankYou() {
-        alert("Thank you!");
+        alert("Thank you ShwetaaaaA!! ❤️ With you everyday is a valentine 🫠");
     }
 
     blinkMessage();
 </script>
+
 </body>
 </html>
